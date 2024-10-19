@@ -35,14 +35,14 @@ publishing {
 
 dependencies {
     // `api` для экспорта зависимостей (транзитивно), `implementation` для нужд стартера
-    api 'org.springframework.boot:spring-boot-autoconfigure'
+    api 'org.springframework.boot:spring-boot-autoconfigure:3.3.4'
     annotationProcessor 'org.springframework.boot:spring-boot-autoconfigure-processor'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.springframework:spring-context-indexer'
 
-    api 'org.springframework.boot:spring-boot-starter-validation'
+    api 'org.springframework.boot:spring-boot-starter-validation:3.3.4'
 
-    api 'org.projectlombok:lombok'
+    api 'org.projectlombok:lombok:1.18.34'
     annotationProcessor 'org.projectlombok:lombok'
 
     // тестирование

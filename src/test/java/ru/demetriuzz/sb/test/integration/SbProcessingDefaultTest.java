@@ -9,14 +9,14 @@ import ru.demetriuzz.sb.service.SbProcessingService;
 public class SbProcessingDefaultTest extends AbstractIntegrationTest {
 
     @Autowired
-    private SbProcessingService etlProcessingService;
+    private SbProcessingService sbProcessingService;
 
     @Test
     @DisplayName("Запуск процесса с реализацией по умолчанию")
     void processing() {
-        Assertions.assertThat(etlProcessingService).isNotNull();
-        Assertions.assertThatCode(() -> etlProcessingService.init()).doesNotThrowAnyException();
-        Assertions.assertThatThrownBy(() -> etlProcessingService.process()).isInstanceOf(TypeNotPresentException.class);
+        Assertions.assertThat(sbProcessingService).isNotNull();
+        Assertions.assertThatCode(() -> sbProcessingService.init()).doesNotThrowAnyException();
+        Assertions.assertThatThrownBy(() -> sbProcessingService.process()).isInstanceOf(TypeNotPresentException.class);
     }
 
 }

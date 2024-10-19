@@ -12,15 +12,15 @@ import ru.demetriuzz.sb.service.SbProcessingService;
 public class SbProcessingEmptyTest extends AbstractIntegrationTest {
 
     @Autowired
-    private SbProcessingService etl; // новая реализация интерфейса
+    private SbProcessingService sbProcessingService; // новая реализация интерфейса
 
     @Test
     @DisplayName("Запуск процесса с пустой реализацией")
     void processing() {
-        Assertions.assertThat(etl).isNotNull();
+        Assertions.assertThat(sbProcessingService).isNotNull();
         Assertions.assertThatCode(() -> {
-            etl.init();
-            etl.process();
+            sbProcessingService.init();
+            sbProcessingService.process();
         }).doesNotThrowAnyException();
     }
 
