@@ -1,15 +1,15 @@
-package ru.demetriuzz.sb.autoconfigure;
+package ru.demetriuzz.sb.starter.autoconfigure;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
-import ru.demetriuzz.sb.service.SbProcessingService;
-import ru.demetriuzz.sb.service.impl.SbProcessingServiceImpl;
+import ru.demetriuzz.sb.starter.service.SbProcessingService;
+import ru.demetriuzz.sb.starter.service.impl.SbProcessingServiceImpl;
 
 @AutoConfiguration
 @AutoConfigureAfter
-public class SbAutoConfiguration {
+public class SbStarterAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(SbProcessingService.class)

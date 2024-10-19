@@ -1,4 +1,4 @@
-package ru.demetriuzz.sb.service;
+package ru.demetriuzz.sb.starter.service;
 
 /**
  * Базовое исключение процесса

@@ -1,4 +1,4 @@
-package ru.demetriuzz.sb.test.integration;
+package ru.demetriuzz.sb.starter.test.integration;
 
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
-import ru.demetriuzz.sb.service.SbProcessingService;
+import ru.demetriuzz.sb.starter.service.SbProcessingService;
 
 @Import({SbProcessingEmptyTest.EmptySbProcessingService.class})
 public class SbProcessingEmptyTest extends AbstractIntegrationTest {

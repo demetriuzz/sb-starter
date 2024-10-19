@@ -1,4 +1,4 @@
-package ru.demetriuzz.sb.test.integration;
+package ru.demetriuzz.sb.starter.test.integration;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;

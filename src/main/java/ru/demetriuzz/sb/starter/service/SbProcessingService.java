@@ -1,4 +1,4 @@
-package ru.demetriuzz.sb.service;
+package ru.demetriuzz.sb.starter.service;
 
 /**
  * Базовый интерфейс для запуска процесса

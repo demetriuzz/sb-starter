@@ -1,7 +1,7 @@
-package ru.demetriuzz.sb.service.impl;
+package ru.demetriuzz.sb.starter.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import ru.demetriuzz.sb.service.SbProcessingService;
+import ru.demetriuzz.sb.starter.service.SbProcessingService;
 
 @Slf4j
 public class SbProcessingServiceImpl implements SbProcessingService {

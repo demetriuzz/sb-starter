@@ -1,4 +1,4 @@
-package ru.demetriuzz.sb.test.integration;
+package ru.demetriuzz.sb.starter.test.integration;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
