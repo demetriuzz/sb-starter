@@ -1,0 +1,56 @@
+plugins {
+    // https://docs.gradle.org/8.5/userguide/java_library_plugin.html
+    id 'java-library'
+    id 'maven-publish'
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'ru.demetriuzz.sb'
+version = '1.0.0-SNAPSHOT-1'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+publishing {
+    publications {
+        starter(MavenPublication) {
+            from components.java
+            withBuildIdentifier()
+        }
+    }
+}
+
+dependencies {
+    // `api` для экспорта зависимостей (транзитивно), `implementation` для нужд стартера
+    api 'org.springframework.boot:spring-boot-autoconfigure'
+    annotationProcessor 'org.springframework.boot:spring-boot-autoconfigure-processor'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.springframework:spring-context-indexer'
+
+    api 'org.springframework.boot:spring-boot-starter-validation'
+
+    api 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // тестирование
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testAnnotationProcessor "org.projectlombok:lombok"
+}
+
+test {
+    useJUnitPlatform()
+}
