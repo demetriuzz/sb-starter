@@ -6,14 +6,20 @@ package ru.demetriuzz.sb.starter.service;
 public interface SbProcessingService {
 
     /**
-     * Подготовка к процессу, если необходимо (запускается первым)
+     * Подготовка
      */
-    default void init() {
+    default void prepare() {
     }
 
     /**
-     * Запуск процесса (запускается после процесса подготовки)
+     * Запуск
      */
-    void process();
+    void execute();
+
+    /**
+     * Завершение
+     */
+    default void complete() {
+    }
 
 }

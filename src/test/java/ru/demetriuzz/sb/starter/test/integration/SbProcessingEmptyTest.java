@@ -11,16 +11,17 @@ import ru.demetriuzz.sb.starter.service.SbProcessingService;
 @Import({SbProcessingEmptyTest.EmptySbProcessingService.class})
 public class SbProcessingEmptyTest extends AbstractIntegrationTest {
 
-    @Autowired
-    private SbProcessingService sbProcessingService; // новая реализация интерфейса
+    @Autowired(required = false)
+    private SbProcessingService sbProcessingService; // реализация интерфейса
 
     @Test
     @DisplayName("Запуск процесса с пустой реализацией")
     void processing() {
         Assertions.assertThat(sbProcessingService).isNotNull();
         Assertions.assertThatCode(() -> {
-            sbProcessingService.init();
-            sbProcessingService.process();
+            sbProcessingService.prepare();
+            sbProcessingService.execute();
+            sbProcessingService.complete();
         }).doesNotThrowAnyException();
     }
 
@@ -28,14 +29,10 @@ public class SbProcessingEmptyTest extends AbstractIntegrationTest {
     public static class EmptySbProcessingService implements SbProcessingService {
 
         @Override
-        public void init() {
-            log.info("init");
+        public void execute() {
+            log.info("execute");
         }
 
-        @Override
-        public void process() {
-            log.info("process");
-        }
     }
 
 }

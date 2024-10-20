@@ -8,15 +8,14 @@ import ru.demetriuzz.sb.starter.service.SbProcessingService;
 
 public class SbProcessingDefaultTest extends AbstractIntegrationTest {
 
-    @Autowired
+    @Autowired(required = false)
     private SbProcessingService sbProcessingService;
 
     @Test
     @DisplayName("Запуск процесса с реализацией по умолчанию")
     void processing() {
-        Assertions.assertThat(sbProcessingService).isNotNull();
-        Assertions.assertThatCode(() -> sbProcessingService.init()).doesNotThrowAnyException();
-        Assertions.assertThatThrownBy(() -> sbProcessingService.process()).isInstanceOf(TypeNotPresentException.class);
+        // нет реализации интерфейса
+        Assertions.assertThat(sbProcessingService).isNull();
     }
 
 }

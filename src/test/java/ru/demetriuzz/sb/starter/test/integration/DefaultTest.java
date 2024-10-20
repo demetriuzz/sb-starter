@@ -20,7 +20,7 @@ public class DefaultTest extends AbstractIntegrationTest {
         final var beans = context.getBeanDefinitionNames();
         Assertions.assertThat(beans).isNotNull();
         Assertions.assertThat(beans.length).isGreaterThan(0);
-        //printBeanInfo(beans);
+        // printBeanInfo(beans);
     }
 
     private void printBeanInfo(String[] beans) {
